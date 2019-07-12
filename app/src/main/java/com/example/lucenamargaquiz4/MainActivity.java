@@ -18,9 +18,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        txtName = findViewById(R.id.etEmail2);
+        txtName = findViewById(R.id.etEmail);
         txtPassword = findViewById(R.id.etPassword);
-        txtEmail = findViewById(R.id.etEmail2);
+        txtEmail = findViewById(R.id.etEmail);
     }
 
     public void goLogin(View v){
@@ -37,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
         editor.commit();
         Toast.makeText(this, "Registered Successfully", Toast.LENGTH_LONG).show();
     }
-
-
+    public void showScreen3(View v){
+        String name = txtEmail.getText().toString();
+        Intent i3 = new Intent(this, Main3Activity.class);
+        i3.putExtra("person", name);
+        startActivity(i3);
+    }
 }
